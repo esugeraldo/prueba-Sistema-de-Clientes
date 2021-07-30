@@ -1,8 +1,5 @@
 package com.desafio.sistemaDeClientes.vista;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
 import com.desafio.sistemaDeClientes.modelo.CategoriaEnum;
 import com.desafio.sistemaDeClientes.modelo.Cliente;
 import com.desafio.sistemaDeClientes.servicio.ClienteServicio;
@@ -13,18 +10,13 @@ public class Menu extends MenuTemplate{
 	// ExportadorCsv ecsv = new ExportadorCsv;
 	// ExportarTxt extxt = new ExportarTxt
 	
-	/*private Util util;
-	private ClienteServicio clienteServicio;
-	private ArchivoServicio archivoServicio;
-	private ExportadorCsv exportadorCsv;
-	private ExportarTxt exportarTxt;
+
 	// String fileName = Clientes
-	// Strign fileName1 = DBclientes.csv*/
+	// Strign fileName1 = DBclientes.csv
 	
 	@Override
 	public void listarClientes() {
 		cs.listarClientes();
-		
 	}
 
 	@Override
@@ -40,15 +32,23 @@ public class Menu extends MenuTemplate{
 		System.out.println("Ingresa años como Cliente:");
 		String aniosCliente = sc.nextLine();
 		Cliente cliente = new Cliente(runCliente, nombreCliente, apellidoCliente, aniosCliente, CategoriaEnum.ACTIVO);
-
 		cs.agregarCliente(cliente); 	
 		
 	}
 
 	@Override
 	public void editarCliente() {
-		System.out.println();
-		
+		System.out.println("-------------Editar Cliente-------------");
+		System.out.println("Ingrese RUN del Cliente a editar o cambiar de estado:");
+		String run = sc.nextLine();
+		for (Cliente cliente : cs.getListaClientes()) {
+			if (cliente.getRunCliente().equals(run)) {
+				cs.editarCliente(cliente);
+
+			}else {
+				System.out.println("El cliente no existe");
+			}
+		}
 	}
 
 	@Override
