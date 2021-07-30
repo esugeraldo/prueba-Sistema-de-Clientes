@@ -54,11 +54,6 @@ public class ClienteServicio {
 		}
 	}
 	
-	
-	public void buscarClientes(String run) {
-		listaClientes.stream().filter(cliente -> cliente.getRunCliente().equals(run));
-	}
-	
 	public void editarCliente(Cliente cliente) {
 		System.out.println("-------------Editar Cliente-------------");
 		System.out.println("Seleccione qué desea hacer: ");
