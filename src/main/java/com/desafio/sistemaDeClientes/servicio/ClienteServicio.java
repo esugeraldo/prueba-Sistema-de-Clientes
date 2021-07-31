@@ -49,9 +49,9 @@ public class ClienteServicio {
 	}
 	
 	public void agregarCliente(Cliente cliente) {
-		if(cliente != null) {
+		//if(cliente != null) {
 			listaClientes.add(cliente);
-		}
+		//}
 	}
 	
 	public void editarCliente(Cliente cliente) {
