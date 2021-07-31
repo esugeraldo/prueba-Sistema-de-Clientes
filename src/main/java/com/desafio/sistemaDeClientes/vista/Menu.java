@@ -2,6 +2,7 @@ package com.desafio.sistemaDeClientes.vista;
 
 import com.desafio.sistemaDeClientes.modelo.CategoriaEnum;
 import com.desafio.sistemaDeClientes.modelo.Cliente;
+import com.desafio.sistemaDeClientes.servicio.ArchivoServicio;
 import com.desafio.sistemaDeClientes.servicio.ClienteServicio;
 import com.desafio.sistemaDeClientes.servicio.ExportadorCsv;
 import com.desafio.sistemaDeClientes.servicio.ExportadorTxt;
@@ -9,11 +10,11 @@ import com.desafio.sistemaDeClientes.utilidades.Util;
 
 public class Menu extends MenuTemplate{
 	private ClienteServicio cs = new ClienteServicio();
-	// private ArchivoServicio as = new ArchivoServicio;
+	private ArchivoServicio as = new ArchivoServicio();
 	private ExportadorCsv ecsv = new ExportadorCsv();
 	private ExportadorTxt etxt = new ExportadorTxt();
 	String fileName = "Clientes";
-	String fileName1 = "DBclientes.csv";
+	String fileName1 = "DBcli4entes.csv";
 	
 	@Override
 	public void listarClientes() {
@@ -54,8 +55,12 @@ public class Menu extends MenuTemplate{
 
 	@Override
 	public void importarDatos() {
-		
-		
+		System.out.println("---------Cargar Datos en Windows---------------\n");
+		System.out.println("Ingresa la ruta en donde se encuentra el archivo DBClientes.csv:");
+		String ruta = sc.nextLine();
+		as.cargarDatos(ruta, cs.getListaClientes());
+		System.out.println("-----------------------------------------------");
+		System.out.println("Datos cargados correctamente en la lista");
 	}
 
 	@Override
@@ -97,9 +102,5 @@ public class Menu extends MenuTemplate{
 		System.out.println("Saliendo del sistema, hasta pronto");
 		System.exit(0);
 	}
-
-
-
-	
 
 }

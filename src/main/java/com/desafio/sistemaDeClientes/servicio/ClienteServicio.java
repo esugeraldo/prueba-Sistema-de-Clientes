@@ -16,10 +16,10 @@ public class ClienteServicio {
 	}
 	
 	//constructor
-	public ClienteServicio(List<Cliente> listaClientes) {
-		super();
-		this.listaClientes = listaClientes;
-	}
+	//public ClienteServicio(List<Cliente> listaClientes) {
+		//super();
+		//this.listaClientes = listaClientes;
+	//}
 	
 	//getter and setter
 	public List<Cliente> getListaClientes() {
