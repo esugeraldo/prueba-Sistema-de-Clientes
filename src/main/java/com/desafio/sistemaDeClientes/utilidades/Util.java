@@ -8,7 +8,8 @@ public class Util {
 		}
 	}
 	
-	public void printLine(String mensaje) {
-		System.out.println(mensaje);
+	public static void printLine() {
+		System.out.println("");
+		System.out.println("Limpiando la pantalla");
 	}
 }

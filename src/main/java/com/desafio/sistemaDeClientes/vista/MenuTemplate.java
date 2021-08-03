@@ -54,6 +54,7 @@ public abstract class MenuTemplate {
 		} catch (InputMismatchException e) {
 			System.out.println("Debe insertar un número");
 		}
+			Util.printLine();
 			Util.limpiarPantalla();
 			iniciarMenu();
 	}
